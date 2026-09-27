@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Login Portal | Anihamid Group Wisata</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, #332400 0%, #151006 28%, #050505 70%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .brand-small {
+      color: #d4a928;
+      font-size: 13px;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    .brand h1 {
+      color: #e0b52e;
+      font-size: 34px;
+      letter-spacing: 5px;
+      margin-bottom: 6px;
+    }
+
+    .brand p {
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    .login-card {
+      background: rgba(12, 12, 12, 0.94);
+      border: 1px solid #a77b08;
+      border-radius: 22px;
+      padding: 30px 22px;
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.65),
+        0 0 35px rgba(212,169,40,.08);
+    }
+
+    .login-card h2 {
+      text-align: center;
+      color: #e0b52e;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    label {
+      display: block;
+      color: #ddd;
+      font-size: 13px;
+      margin: 15px 0 7px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: 52px;
+      padding: 0 15px;
+      border-radius: 11px;
+      border: 1px solid #454545;
+      background: #151515;
+      color: white;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #d4a928;
+      box-shadow: 0 0 0 2px rgba(212,169,40,.12);
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 16px 0 20px;
+      color: #bbb;
+      font-size: 13px;
+    }
+
+    .remember input {
+      width: 17px;
+      height: 17px;
+    }
+
+    .login-button {
+      width: 100%;
+      border: none;
+      border-radius: 11px;
+      padding: 16px;
+      background: linear-gradient(135deg, #bd8c13, #f1d361);
+      color: #080808;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-button:active {
+      transform: scale(.98);
+    }
+
+    .help {
+      text-align: center;
+      margin-top: 20px;
+      color: #aaa;
+      font-size: 12px;
+    }
+
+    .help a {
+      color: #e0b52e;
+      text-decoration: none;
+    }
+
+    .footer {
+      text-align: center;
+      color: #777;
+      font-size: 11px;
+      margin-top: 28px;
+    }
+
+    #message {
+      display: none;
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 9px;
+      background: #211a09;
+      border: 1px solid #6f5717;
+      color: #e9c84e;
+      text-align: center;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="brand">
+      <div class="brand-small">PORTAL RESMI</div>
+      <h1>ANIHAMID</h1>
+      <p>PT. ANIHAMID GROUP WISATA</p>
+    </div>
+
+    <div class="login-card">
+
+      <h2>Login Portal</h2>
+
+      <div class="subtitle">
+        Silakan masuk untuk mengakses sistem
+      </div>
+
+      <form id="loginForm">
+
+        <label>Email / Username</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Masukkan email atau username"
+          required
+        >
+
+        <label>Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Masukkan password"
+          required
+        >
+
+        <label>Peran</label>
+        <select id="role" required>
+          <option value="">Pilih Peran</option>
+          <option value="jamaah">Jamaah</option>
+          <option value="agen">Agen</option>
+          <option value="tourleader">Tour Leader</option>
+          <option value="admin">Admin Travel</option>
+          <option value="manajemen">Manajemen</option>
+        </select>
+
+        <div class="remember">
+          <input type="checkbox" id="remember">
+          <span>Ingat saya</span>
+        </div>
+
+        <button class="login-button" type="submit">
+          LOGIN
+        </button>
+
+        <div id="message">
+          Halaman login berhasil dibuat.
+          Tahap berikutnya adalah menghubungkan login ke dashboard.
+        </div>
+
+      </form>
+
+      <div class="help">
+        Belum punya akun?
+        <a href="#">Hubungi Admin</a>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      © 2026 PT. ANIHAMID GROUP WISATA
+    </div>
+
+  </div>
+
+  <script>
+    document
+      .getElementById("loginForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        document.getElementById("message").style.display = "block";
+
+      });
+  </script>
+
+</body>
+</html>
